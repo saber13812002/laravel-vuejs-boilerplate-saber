@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+
+Route::get('/{any}', function () {
+    return view('home');
+})->where('any',  '^(?!api).*$')->where('any',  '^(?!image-upload).*$');
